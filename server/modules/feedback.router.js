@@ -14,4 +14,19 @@ router.get("/", (req, res) => {
 		});
 });
 
+router.post('/', async (req, res)=>{
+    console.log('POST /feedback');
+    const postValues = req.body
+    const postQuery = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
+    VALUES ($1, $2, $3, $4);`;
+    pool.query(postQuery, [postValues.feeling, postValues.understanding, postValues.support, postValues.comments])
+    .then((result)=>{
+        res.sendStatus(201)
+
+    }).catch((error)=>{
+        console.log("Error POST /feedback", error);
+        res.sendStatus(500)
+    })
+});
+
 module.exports = router;
