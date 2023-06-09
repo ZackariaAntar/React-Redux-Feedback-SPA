@@ -11,21 +11,32 @@ function FeedbackForm() {
 	return (
 		<>
 			<form>
-				<Route>
+				<Route exact path="/">
 					<FeelingField />
+					<button>
+						<Link to="/understanding"> NEXT</Link>
+					</button>
 				</Route>
 
-				<Route>
+				<Route exact path="/understanding">
 					<UnderstandingField />
+					<button>
+						<Link to="/support"> NEXT</Link>
+					</button>
 				</Route>
-				<Route>
-                    <SupportField />
+				<Route exact path="/support">
+					<SupportField />
+					<button>
+						<Link to="/comments"> NEXT</Link>
+					</button>
 				</Route>
 
-				<Route>
+				<Route exact path="/comments">
 					<CommentsField />
+					<button type="submit">
+						 NEXT
+					</button>
 				</Route>
-                
 			</form>
 		</>
 	);
