@@ -1,5 +1,9 @@
 import {Route, Link } from "react-router-dom";
 import FeelingField from "../FeelingField/FeelingField";
+import UnderstandingField from "../UnderstandingField/UnderstandingField";
+import SupportField from "../SupportField/SupportField";
+import CommentsField from "../CommentsField/CommentsField";
+
 function FeedbackForm() {
     const postReflection = () =>{
 
@@ -12,24 +16,16 @@ function FeedbackForm() {
 				</Route>
 
 				<Route>
-					<label className="InputLabel">Understanding</label>
-					<input
-						type="text"
-						placeholder="How well did you understand (1-5)"
-					/>
+					<UnderstandingField />
 				</Route>
 				<Route>
-					<label className="InputLabel">Support</label>
-					<input
-						type="text"
-						placeholder="How supported did you feel (1-5)"
-					/>
+                    <SupportField />
 				</Route>
 
 				<Route>
-					<label className="InputLabel">Comments</label>
-					<textarea placeholder="What comments do you have?" />
+					<CommentsField />
 				</Route>
+                
 			</form>
 		</>
 	);
