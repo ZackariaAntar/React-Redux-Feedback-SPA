@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 function NextButton({path , type}) {
-    console.log(type);
+    console.log('Button type:', type, '\nIs going to:', path);
 
 
 	return (<button type={type}>

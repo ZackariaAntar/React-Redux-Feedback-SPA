@@ -1,4 +1,4 @@
-import {Route, Link } from "react-router-dom";
+import {Route } from "react-router-dom";
 import axios from "axios";
 import FeelingField from "../FeelingField/FeelingField";
 import UnderstandingField from "../UnderstandingField/UnderstandingField";

@@ -13,9 +13,17 @@ const reflections = (state = [], action) => {
     return state;
 }
 
+const inputStore = (state = [], action)=>{
+    if(action.type === 'ADD_REFLECTION'){
+        return action.payload
+    }
+    return state
+}
+
 const store = createStore(
 	combineReducers({
 		reflections,
+        inputStore
 	}),
 	applyMiddleware(logger)
 );
