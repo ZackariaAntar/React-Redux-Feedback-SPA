@@ -15,7 +15,7 @@ const reflections = (state = [], action) => {
 
 const inputStore = (state = [], action)=>{
     if(action.type === 'ADD_REFLECTION'){
-        return action.payload
+        return {...state, ...action.payload}
     }
     return state
 }
