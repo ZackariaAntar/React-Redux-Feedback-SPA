@@ -1,5 +1,7 @@
-function SupportField(){
-    return (
+import { useState } from "react";
+
+function SupportField() {
+	return (
 		<>
 			<label className="InputLabel">Support</label>
 			<input type="text" placeholder="How supported did you feel (1-5)" />
@@ -7,4 +9,4 @@ function SupportField(){
 	);
 }
 
-export default SupportField
+export default SupportField;

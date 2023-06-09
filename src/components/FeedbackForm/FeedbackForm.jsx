@@ -3,6 +3,7 @@ import FeelingField from "../FeelingField/FeelingField";
 import UnderstandingField from "../UnderstandingField/UnderstandingField";
 import SupportField from "../SupportField/SupportField";
 import CommentsField from "../CommentsField/CommentsField";
+import NextButton from "../NextButton/NextButton";
 
 function FeedbackForm() {
     const postReflection = () =>{
@@ -13,9 +14,7 @@ function FeedbackForm() {
 			<form>
 				<Route exact path="/">
 					<FeelingField />
-					<button>
-						<Link to="/understanding"> NEXT</Link>
-					</button>
+					<NextButton path={"/understanding"} />
 				</Route>
 
 				<Route exact path="/understanding">
@@ -33,9 +32,7 @@ function FeedbackForm() {
 
 				<Route exact path="/comments">
 					<CommentsField />
-					<button type="submit">
-						 NEXT
-					</button>
+					<button type="submit">NEXT</button>
 				</Route>
 			</form>
 		</>

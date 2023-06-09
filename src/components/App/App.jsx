@@ -16,7 +16,7 @@ function App() {
   })
 
   const getReflections = () => {
-    axios.get('/').then((response)=>{
+    axios.get('/feedback').then((response)=>{
       console.log(response.data);
       dispatch({type:'GET_REFLECTIONS', payload: response.data})
     }).catch((err)=>{
@@ -29,7 +29,7 @@ function App() {
       <div className="App">
         <Header />
         <FeedbackForm />
-        
+
       </div>
     </Router>
   );

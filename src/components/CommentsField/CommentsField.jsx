@@ -1,6 +1,7 @@
-function CommentsField(){
+import { useState } from "react";
 
-    return (
+function CommentsField() {
+	return (
 		<>
 			<label className="InputLabel">Comments</label>
 			<textarea placeholder="What comments do you have?" />
@@ -8,4 +9,4 @@ function CommentsField(){
 	);
 }
 
-export default CommentsField
+export default CommentsField;

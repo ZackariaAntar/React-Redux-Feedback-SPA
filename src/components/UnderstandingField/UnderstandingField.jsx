@@ -1,5 +1,7 @@
-function UnderstandingField(){
-    return (
+import { useState } from "react";
+
+function UnderstandingField() {
+	return (
 		<>
 			<label className="InputLabel">Understanding</label>
 			<input
@@ -10,4 +12,4 @@ function UnderstandingField(){
 	);
 }
 
-export default UnderstandingField
+export default UnderstandingField;
