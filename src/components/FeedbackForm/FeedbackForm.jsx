@@ -1,5 +1,5 @@
 import {Route, Link } from "react-router-dom";
-
+import FeelingField from "../FeelingField/FeelingField";
 function FeedbackForm() {
     const postReflection = () =>{
 
@@ -8,11 +8,7 @@ function FeedbackForm() {
 		<>
 			<form>
 				<Route>
-					<label className="InputLabel">Feeling</label>
-					<input
-						type="text"
-						placeholder="How are you feeling (1-5)"
-					/>
+					<FeelingField />
 				</Route>
 
 				<Route>
