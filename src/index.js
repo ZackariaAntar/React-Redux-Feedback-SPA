@@ -11,14 +11,15 @@ const reflections = (state = [], action) => {
         return action.payload
     }
 
-    return store
+    return state
 }
 
-const store = createStore(combineReducers(
-    {
-        reflections
-    }
-))
+const store = createStore(
+	combineReducers({
+		reflections,
+	}),
+	applyMiddleware(logger)
+);
 
 
 
