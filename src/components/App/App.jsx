@@ -23,7 +23,7 @@ function App() {
   }
 
   return (
-    <Router>
+    // <Router>
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Feedback!</h1>
@@ -46,7 +46,7 @@ function App() {
           <textarea placeholder="What comments do you have?" />
         </form>
       </div>
-    </Router>
+    // </Router>
   );
 }
 
