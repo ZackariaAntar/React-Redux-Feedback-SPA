@@ -10,8 +10,7 @@ const reflections = (state = [], action) => {
     if(action.type === 'GET_REFLECTIONS'){
         return action.payload
     }
-
-    return state
+    return state;
 }
 
 const store = createStore(
