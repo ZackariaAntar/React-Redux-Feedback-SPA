@@ -16,17 +16,17 @@ function SupportField() {
 
 	return (
 		<>
-			<label className="InputLabel">Support</label>
+			<h1>How well are you being supported?</h1>
+			<label className="InputLabel">Support?</label>
 			<input
 				value={support}
-				type="text"
-				placeholder="How supported did you feel (1-5)"
+				type="number"
+				placeholder="1-5"
 				onChange={(e) => setSupport(e.target.value)}
 			/>
 			<button disabled={!support} onClick={handleClick}>
-				{support ? (<Link to={"/comments"}>NEXT</Link>) : ("NEXT")}
+				{support ? <Link to={"/comments"}>NEXT</Link> : "NEXT"}
 			</button>
-
 		</>
 	);
 }

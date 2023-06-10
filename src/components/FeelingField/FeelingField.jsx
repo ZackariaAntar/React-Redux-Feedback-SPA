@@ -16,11 +16,12 @@ function FeelingField(){
 
     return (
 		<>
-			<label className="InputLabel">Feeling</label>
+        <h1>How are you feeling today?</h1>
+			<label className="InputLabel">Feeling?</label>
 			<input
 				value={feeling}
 				type="text"
-				placeholder="How are you feeling (1-5)"
+				placeholder="1-5"
 				onChange={(e) => setFeeling(e.target.value)}
 			/>
 			<button disabled={!feeling} onClick={handleClick}>{feeling ? (<Link to={"/understanding"}> NEXT</Link>):("NEXT")}

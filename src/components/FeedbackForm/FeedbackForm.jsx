@@ -10,22 +10,33 @@ function FeedbackForm() {
 		<>
 			<form>
 				<Route exact path="/">
-					<FeelingField />
+					<div className="FormField-container">
+					    <FeelingField />
+                    </div>
 				</Route>
+
 				<Route exact path="/understanding">
-					<UnderstandingField />
+					<div className="FormField-container">
+					    <UnderstandingField />
+                    </div>
 				</Route>
 
 				<Route exact path="/support">
-					<SupportField />
+					<div className="FormField-container">
+					    <SupportField />
+                    </div>
 				</Route>
 
 				<Route exact path="/comments">
-					<CommentsField />
+					<div className="FormField-container">
+					    <CommentsField />
+                    </div>
 				</Route>
 
 				<Route exact path="/review">
-			    	<ReviewFeedback />
+					<div className="FormField-container">
+					    <ReviewFeedback />
+                    </div>
 				</Route>
 			</form>
 		</>
