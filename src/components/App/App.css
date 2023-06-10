@@ -120,6 +120,7 @@ a:hover{
   background-color: #033076;
   font-family: 'Helvetica Neue';
   font-weight: 600;
+  font-size: 1.25rem;
 
 
 }
@@ -134,6 +135,7 @@ a:hover{
   cursor: no-drop;
   font-family: 'Helvetica Neue';
   font-weight: 600;
+  font-size: 1.25rem;
 }
 
 .next-button:enabled:hover {
