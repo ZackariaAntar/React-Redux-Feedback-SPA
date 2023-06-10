@@ -1,16 +1,11 @@
 import {Route } from "react-router-dom";
-import axios from "axios";
 import FeelingField from "../FeelingField/FeelingField";
 import UnderstandingField from "../UnderstandingField/UnderstandingField";
 import SupportField from "../SupportField/SupportField";
 import CommentsField from "../CommentsField/CommentsField";
-import { useSelector } from "react-redux";
 import ReviewFeedback from "../ReviewFeedback/ReviewFeedback";
-import { Link } from "react-router-dom";
 
 function FeedbackForm() {
-    const inputStore = useSelector(store=>store.inputStore)
-
 	return (
 		<>
 			<form>
@@ -30,8 +25,7 @@ function FeedbackForm() {
 				</Route>
 
 				<Route exact path="/review">
-					<ReviewFeedback />
-
+			    	<ReviewFeedback />
 				</Route>
 			</form>
 		</>

@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 function UnderstandingField() {
-    const [understanding, setUnderstanding] = useState({understanding: ''})
+    const [understanding, setUnderstanding] = useState('')
     const dispatch = useDispatch()
     const handleClick = (e) => {
         e.preventDefault();

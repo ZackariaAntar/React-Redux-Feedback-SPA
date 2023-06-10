@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function NextButton({path}) {
+function NextButton({path, }) {
 
 	return (<button >
         <Link to = {path}>NEXT </Link>

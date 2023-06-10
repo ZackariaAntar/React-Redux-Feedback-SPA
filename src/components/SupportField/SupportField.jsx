@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 function SupportField() {
-    const [support, setSupport] = useState({support: ''})
+    const [support, setSupport] = useState('')
     const dispatch = useDispatch()
      const handleClick = (e) => {
 			e.preventDefault();
