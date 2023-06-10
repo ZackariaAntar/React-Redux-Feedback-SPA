@@ -2,7 +2,8 @@ import { useState } from "react";
 import NextButton from "../NextButton/NextButton";
 
 function CommentsField() {
-    const [comment, setComment] = useState('')
+    const [comment, setComment] = useState({comment: ''})
+
 	return (
 		<>
 			<label className="InputLabel">Comments</label>
@@ -11,11 +12,7 @@ function CommentsField() {
 				placeholder="What comments do you have?"
 				onChange={(e) => setComment(e.target.value)}
 			/>
-			<NextButton
-				input={comment}
-				setInput={setComment}
-				path={"/thanks"}
-			/>
+
 		</>
 	);
 }
