@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import Header from '../Header/Header';
 import FeedbackForm from '../FeedbackForm/FeedbackForm';
+import ThanksPage from '../ThanksPage/ThanksPage';
 import { useEffect } from 'react';
 import { useDispatch } from "react-redux";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
@@ -29,7 +30,9 @@ function App() {
       <div className="App">
         <Header />
         <FeedbackForm />
-        <ThanksPage />
+        <Route exact path={'/thanks'}>
+          <ThanksPage />
+        </Route>
       </div>
     </Router>
   );

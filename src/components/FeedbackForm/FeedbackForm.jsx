@@ -6,24 +6,14 @@ import SupportField from "../SupportField/SupportField";
 import CommentsField from "../CommentsField/CommentsField";
 import { useSelector } from "react-redux";
 import ReviewFeedback from "../ReviewFeedback/ReviewFeedback";
-import NextButton from "../NextButton/NextButton";
-
+import { Link } from "react-router-dom";
 
 function FeedbackForm() {
     const inputStore = useSelector(store=>store.inputStore)
-    const postReflection = (event) =>{
-        event.preventDefault()
-        axios.post('/feedback', {inputStore})
-        .then((response)=>{
-            console.log(response);
-        }).catch((err)=>{
-            console.log(err);
-        })
 
-    }
 	return (
 		<>
-			<form onSubmit={postReflection}>
+			<form>
 				<Route exact path="/">
 					<FeelingField />
 				</Route>
@@ -41,6 +31,7 @@ function FeedbackForm() {
 
 				<Route exact path="/review">
 					<ReviewFeedback />
+
 				</Route>
 			</form>
 		</>

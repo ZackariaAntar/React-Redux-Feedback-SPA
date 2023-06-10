@@ -16,7 +16,8 @@ router.get("/", (req, res) => {
 
 router.post('/', async (req, res)=>{
     console.log('POST /feedback');
-    const postValues = req.body
+    const postValues = req.body.inputStore
+    console.log(postValues.inputStore);
     const postQuery = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
     VALUES ($1, $2, $3, $4);`;
     pool.query(postQuery, [postValues.feeling, postValues.understanding, postValues.support, postValues.comments])
