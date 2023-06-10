@@ -1,14 +1,13 @@
 import { useState } from "react";
-import NextButton from "../NextButton/NextButton";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 
 function FeelingField(){
     const dispatch = useDispatch()
-    const [input, setInput] = useState('')
     const [feeling, setFeeling] = useState({feeling: ''})
-    const handleClick = () => {
+    const handleClick = (e) => {
+        e.preventDefault()
 			dispatch({ type: "ADD_REFLECTION", payload: {feeling: feeling} });
 		};
     console.log(feeling);

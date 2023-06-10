@@ -26,30 +26,20 @@ function FeedbackForm() {
 			<form onSubmit={postReflection}>
 				<Route exact path="/">
 					<FeelingField />
-					
 				</Route>
 				<Route exact path="/understanding">
 					<UnderstandingField />
-					<NextButton
-						path={"/support"}
-					/>
 				</Route>
 
 				<Route exact path="/support">
 					<SupportField />
-					<NextButton
-						path={"/comments"}
-					/>
 				</Route>
 
 				<Route exact path="/comments">
 					<CommentsField />
-					<NextButton
-						path={"/thanks"}
-					/>
 				</Route>
 
-				<Route exact path="/thanks">
+				<Route exact path="/review">
 					<ReviewFeedback />
 				</Route>
 			</form>

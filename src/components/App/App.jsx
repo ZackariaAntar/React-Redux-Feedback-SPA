@@ -29,6 +29,7 @@ function App() {
       <div className="App">
         <Header />
         <FeedbackForm />
+        <ThanksPage />
       </div>
     </Router>
   );
