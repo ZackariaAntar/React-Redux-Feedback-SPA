@@ -21,10 +21,9 @@ function UnderstandingField() {
 				placeholder="How well did you understand (1-5)"
 				onChange={(e) => setUnderstanding(e.target.value)}
 			/>
-			<button onClick={handleClick}>
-				<Link to={"/support"}>NEXT</Link>
+			<button disabled={!understanding} onClick={handleClick}>
+				{understanding ? (<Link to={"/support"}>NEXT</Link>):("NEXT")}
 			</button>
-
 		</>
 	);
 }

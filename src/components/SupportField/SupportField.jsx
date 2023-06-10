@@ -23,9 +23,10 @@ function SupportField() {
 				placeholder="How supported did you feel (1-5)"
 				onChange={(e) => setSupport(e.target.value)}
 			/>
-			<button onClick={handleClick}>
-				<Link to={"/comments"}>NEXT</Link>
+			<button disabled={!support} onClick={handleClick}>
+				{support ? (<Link to={"/comments"}>NEXT</Link>) : ("NEXT")}
 			</button>
+
 		</>
 	);
 }
