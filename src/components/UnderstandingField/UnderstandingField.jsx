@@ -17,6 +17,8 @@ function UnderstandingField() {
 			<h1 className="section-header">
 				How well are you understanding the content?
 			</h1>
+            <div className="input-wrapper">
+
 			<label className="InputLabel">
                 <p>
                 Understanding?
@@ -30,6 +32,7 @@ function UnderstandingField() {
 				onChange={(e) => setUnderstanding(e.target.value)}
                 />
             </label>
+            </div>
 			<button
 				className="next-button"
 				disabled={!understanding}

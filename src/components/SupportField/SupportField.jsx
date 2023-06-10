@@ -19,6 +19,8 @@ function SupportField() {
 			<h1 className="section-header">
 				How well are you being supported?
 			</h1>
+            <div className="input-wrapper">
+
 			<label className="InputLabel">
                 <p>
 
@@ -32,6 +34,7 @@ function SupportField() {
 				onChange={(e) => setSupport(e.target.value)}
                 />
             </label>
+            </div>
 			<button
 				className="next-button"
 				disabled={!support}

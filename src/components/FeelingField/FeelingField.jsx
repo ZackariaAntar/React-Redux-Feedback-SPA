@@ -17,16 +17,18 @@ function FeelingField(){
     return (
 		<>
 			<h1 className="section-header">How are you feeling today?</h1>
-			<label className="InputLabel">
-				<p> Feeling?</p>
-				<input
-					className="num-input"
-					value={feeling}
-					type="text"
-					placeholder="1-5"
-					onChange={(e) => setFeeling(e.target.value)}
-				/>
-			</label>
+			<div className="input-wrapper">
+                <label className="InputLabel">
+                    <p> Feeling?</p>
+                    <input
+                        className="num-input"
+                        value={feeling}
+                        type="text"
+                        placeholder="1-5"
+                        onChange={(e) => setFeeling(e.target.value)}
+                        />
+                </label>
+            </div>
 			<button
 				className="next-button"
 				disabled={!feeling}

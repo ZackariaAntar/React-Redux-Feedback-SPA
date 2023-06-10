@@ -20,7 +20,9 @@ function CommentsField() {
 	return (
 		<>
 			<h1 className="section-header">What comments do you have?</h1>
-			<label className="InputLabel">
+			<div className="input-wrapper">
+
+            <label className="InputLabel">
                 <p>
                     Comments?
                 </p>
@@ -31,6 +33,7 @@ function CommentsField() {
 				onChange={(e) => setComment(e.target.value)}
                 />
             </label>
+            </div>
 			<button className="next-button" onClick={handleClick}>
 				<Link to={"/review"}>NEXT</Link>
 			</button>

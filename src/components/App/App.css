@@ -1,19 +1,20 @@
 .App {
   text-align: center;
-  margin: auto;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:'Helvetica Neue';
+
 }
 
 .App-header {
   background-color: #033076;
-  min-height: 70px;
-  padding: 20px;
+  min-height: 10vh;
+  padding-top: 2.5vh;
+  padding-bottom: 2.5vh;
   color: white;
-  margin-bottom: 20px;
+  box-shadow: 0px 5px 10px #000000;
 }
 
 .App-title {
-  font-size: 2em;
+  font-size: 3em;
 }
 
 .App-intro {
@@ -23,54 +24,85 @@
 h4 {
   font-style: italic;
 }
+.Feedback-wrapper{
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
 
 
+.FormField-container:before{
+    content: "";
+      position: absolute;
+      background: inherit;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: inset 0 0 200px rgb(255, 255, 255);
+      filter: blur(50px);
+  }
 .FormField-container{
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  background-color: aqua;
-  width: 60vw;
-  height: 20vh;
-  position: relative;
-  top: 2vh;
-  left: 20vw;
+  width: 50rem;
+    height: 20rem;
+    border-radius: 5px;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    width: 900px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 5px 5px 7px 2px rgba(3, 47, 118, 0.583), inset 0px 0px 4px 2000px rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(2.5px);
+    border-radius: 30px;
+    width: 950px;
+    height: 450px;
+    margin-bottom: 50px;
+
 
 }
 
 .section-header{
-  grid-area: 1 / 2 / 2 / 12;
-  font-size: 1.75em;
+  color: #033076;
+  font-size: 2.5rem;
+}
+.input-wrapper{
+  margin-bottom: 75px;
+
 }
 
-.InputLabel{
-  grid-area: 2 / 2 / 4 / 12;;
-  font-size: 1em;
+.InputLabel> p{
+  color: #033076;
+  font-size: 1.5rem;
+  font-weight: bold;
 
 }
 
 .num-input{
   width: 150px;
   padding: 12px 2px;
-  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Helvetica Neue';
+  font-weight: 600;
 
 }
 input:focus-visible{
   border: 2px solid purple;
   border-radius: 2px;
-
 }
+
+
 .num-input:placeholder-shown{
+  font-family: 'Helvetica Neue';
+  font-weight: 600;
   text-align: center;
 
 }
 
 .next-button{
-  grid-area: 9 / 10 / 8 / 12;
   width: 8vw;
-  padding: 12px 2px;
+  padding: 15px 2px;
 
 }
 
@@ -78,8 +110,15 @@ input:focus-visible{
   resize: none;
   width: 480px;
   height: 100px;
+  font-family: 'Helvetica Neue';
+  font-weight: 600;
+  padding: 10px;
 }
 
-.text-area:placeholder-shown{
-  font-family: 
+.text-area:placeholder{
+  font-family: 'Helvetica Neue';
+  font-weight: 600;
+}
+textarea:focus::placeholder {
+  color: transparent;
 }
