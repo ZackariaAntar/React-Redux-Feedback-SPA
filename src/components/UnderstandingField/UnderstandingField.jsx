@@ -14,15 +14,27 @@ function UnderstandingField() {
     console.log(inputStore);
 	return (
 		<>
-			<h1>How well are you understanding the content?</h1>
-			<label className="InputLabel">Understanding?</label>
+			<h1 className="section-header">
+				How well are you understanding the content?
+			</h1>
+			<label className="InputLabel">
+                <p>
+                Understanding?
+                </p>
+
 			<input
+				className="num-input"
 				value={understanding}
 				type="number"
 				placeholder="1-5"
 				onChange={(e) => setUnderstanding(e.target.value)}
-			/>
-			<button disabled={!understanding} onClick={handleClick}>
+                />
+            </label>
+			<button
+				className="next-button"
+				disabled={!understanding}
+				onClick={handleClick}
+			>
 				{understanding ? <Link to={"/support"}>NEXT</Link> : "NEXT"}
 			</button>
 		</>

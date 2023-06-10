@@ -18,14 +18,16 @@ function ReviewFeedback(){
 
     return (
 		<>
-			<h1>Review Feedback Before Submitting</h1>
+			<h1 className="section-header">
+				Review Feedback Before Submitting
+			</h1>
 			<ul>
 				<li>{inputStore.feeling}</li>
 				<li>{inputStore.understanding}</li>
 				<li>{inputStore.support}</li>
 				<li>{inputStore.comment}</li>
 			</ul>
-			<button onClick={postReflection}>
+			<button className="next-button" onClick={postReflection}>
 				<Link to={"/thanks"}> Submit</Link>
 			</button>
 		</>

@@ -19,14 +19,19 @@ function CommentsField() {
 
 	return (
 		<>
-			<h1>What comments do you have?</h1>
-			<label className="InputLabel">Comments?</label>
+			<h1 className="section-header">What comments do you have?</h1>
+			<label className="InputLabel">
+                <p>
+                    Comments?
+                </p>
 			<textarea
+				className="text-area"
 				value={comment}
 				placeholder="☺️ Feel free to share your thoughts and feeling and/or let us know how we can improve! ☺️"
 				onChange={(e) => setComment(e.target.value)}
-			/>
-			<button onClick={handleClick}>
+                />
+            </label>
+			<button className="next-button" onClick={handleClick}>
 				<Link to={"/review"}>NEXT</Link>
 			</button>
 		</>

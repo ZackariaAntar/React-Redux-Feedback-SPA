@@ -29,10 +29,12 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <FeedbackForm />
-        <Route exact path={'/thanks'}>
-          <ThanksPage />
-        </Route>
+        <div className='Feedback-wrapper'>
+          <FeedbackForm />
+          <Route exact path={'/thanks'}>
+            <ThanksPage />
+          </Route>
+        </div>
       </div>
     </Router>
   );
