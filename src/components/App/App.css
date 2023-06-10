@@ -122,3 +122,14 @@ input:focus-visible{
 textarea:focus::placeholder {
   color: transparent;
 }
+
+.score{
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.review-wrapper{
+  margin-left:250px;
+  padding-bottom: 25px;
+  text-align: left;
+}
