@@ -2,22 +2,11 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import NextButton from "../NextButton/NextButton";
 
+function FeelingField() {
+	const dispatch = useDispatch();
+	const [feeling, setFeeling] = useState("");
 
-function FeelingField(){
-    const dispatch = useDispatch()
-	// const inputStore = useSelector((store) => store.inputStore);
-	const [history, setHistory] = useState("");
-
-	// useEffect(()=>{
-	// 	setHistory(inputStore.feeling)
-	// },[])
-	    const [feeling, setFeeling] = useState({name: ''});
-
-
-
-
-
-    return (
+	return (
 		<>
 			<h1 className="section-header">How are you feeling today?</h1>
 			<div className="input-wrapper">
@@ -46,4 +35,4 @@ function FeelingField(){
 		</>
 	);
 }
-export default FeelingField
+export default FeelingField;

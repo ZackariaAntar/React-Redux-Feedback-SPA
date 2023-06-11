@@ -3,16 +3,8 @@ import { useDispatch } from "react-redux";
 import NextButton from "../NextButton/NextButton";
 
 function SupportField() {
-    const [support, setSupport] = useState('')
-    const dispatch = useDispatch()
-     const handleClick = (e) => {
-			e.preventDefault();
-			dispatch({
-				type: "ADD_REFLECTION",
-				payload: { support: support },
-			});
-		};
-
+	const [support, setSupport] = useState("");
+	const dispatch = useDispatch();
 	return (
 		<>
 			<h1 className="section-header">

@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
-import { useDispatch } from "react-redux";
-import { memo } from "react";
 
-function NextButton({ path, used,  }) {
+function NextButton({ path, used }) {
 	return (
 		<Button
 			sx={[
@@ -52,4 +50,4 @@ function NextButton({ path, used,  }) {
 	);
 }
 
-export default memo(NextButton);
+export default NextButton;

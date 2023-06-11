@@ -4,11 +4,8 @@ import { useDispatch } from "react-redux";
 import NextButton from "../NextButton/NextButton";
 
 function UnderstandingField() {
-    const [understanding, setUnderstanding] = useState('')
-    const dispatch = useDispatch()
-
-    // const inputStore = useSelector(store => store.inputStore)
-    console.log(understanding);
+	const [understanding, setUnderstanding] = useState("");
+	const dispatch = useDispatch();
 	return (
 		<>
 			<h1 className="section-header">
@@ -31,7 +28,7 @@ function UnderstandingField() {
 			</div>
 			<NextButton
 				used={understanding}
-				onLink={dispatch({
+				onClick={dispatch({
 					type: "ADD_REFLECTION",
 					payload: { understanding: understanding },
 				})}
@@ -42,7 +39,3 @@ function UnderstandingField() {
 }
 
 export default UnderstandingField;
-
-
-
-

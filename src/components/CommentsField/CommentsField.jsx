@@ -2,17 +2,9 @@ import { useState } from "react";
 import NextButton from "../NextButton/NextButton";
 import { useDispatch } from "react-redux";
 
-
-
-
 function CommentsField() {
-    const [comment, setComment] = useState('')
-    const dispatch = useDispatch();
-     const handleClick = (e) => {
-			e.preventDefault();
-			;
-		};
-
+	const [comment, setComment] = useState("");
+	const dispatch = useDispatch();
 
 	return (
 		<>

@@ -12,7 +12,7 @@ import {
 	Paper,
 	Button,
 	Typography,
-	IconButton
+	IconButton,
 } from "@mui/material";
 
 import { useEffect, useState } from "react";
@@ -142,5 +142,3 @@ function Admin({ getReflections }) {
 	);
 }
 export default Admin;
-
-//  onClick={()=>{deleteItem(item.id)}}
