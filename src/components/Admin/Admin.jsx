@@ -1,45 +1,45 @@
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import {Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
-
+import {
+	Dialog,
+	DialogActions,
+	DialogContent,
+	DialogTitle,
+	Table,
+	TableCell,
+	TableBody,
+	TableContainer,
+	TableHead,
+	TableRow,
+	Paper,
+	Button,
+	Typography,
+	IconButton
+} from "@mui/material";
 
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { IconButton } from "@mui/material";
-
 import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
 
-
-function Admin({getReflections}) {
+function Admin({ getReflections }) {
 	const reflections = useSelector((store) => store.reflections);
-	useEffect(()=>{
-		getReflections()
-	},[])
+	useEffect(() => {
+		getReflections();
+	}, []);
 	const [open, setOpen] = useState(false);
-	const [id, setId] = useState('')
-
-    const deleteItem = (id) => {
-        console.log(id);
-        axios.delete(`/feedback/delete/${id}`)
-        .then((response)=>{
-			setOpen(!open)
-            console.log(response);
-            getReflections()
-
-        }).catch((err)=>{
-            console.log(err);
-        })
-
-    }
+	const [id, setId] = useState("");
+	const deleteItem = (id) => {
+		console.log(id);
+		axios
+			.delete(`/feedback/delete/${id}`)
+			.then((response) => {
+				setOpen(!open);
+				console.log(response);
+				getReflections();
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
 
 	return (
 		<>
@@ -58,9 +58,21 @@ function Admin({getReflections}) {
 					</Typography>
 				</DialogContent>
 				<DialogActions>
-					<Button variant="contained" onClick={()=>{setOpen
-					(!open)}}>No</Button>
-					<Button variant="contained" color="error" onClick={()=>{deleteItem(id)}}>
+					<Button
+						variant="contained"
+						onClick={() => {
+							setOpen(!open);
+						}}
+					>
+						No
+					</Button>
+					<Button
+						variant="contained"
+						color="error"
+						onClick={() => {
+							deleteItem(id);
+						}}
+					>
 						Yes
 					</Button>
 				</DialogActions>
@@ -114,8 +126,8 @@ function Admin({getReflections}) {
 								</TableCell>
 								<TableCell align="center">
 									<IconButton
-										onClick={() => { setId(item.id),
-											setOpen(!open);
+										onClick={() => {
+											setId(item.id), setOpen(!open);
 										}}
 									>
 										<DeleteIcon />
@@ -130,6 +142,5 @@ function Admin({getReflections}) {
 	);
 }
 export default Admin;
-
 
 //  onClick={()=>{deleteItem(item.id)}}
