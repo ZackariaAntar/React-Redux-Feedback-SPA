@@ -3,7 +3,7 @@
 
 ## Description
 
-A full stack Single Page [CRUD app](https://www.freecodecamp.org/news/crud-operations-explained/) that navigates a user through a feedback submission form, and allows the user to edit their responses before submitting. This app includes an admin page that allows for submissions to be deleted from the database.
+A full stack Single Page [CRUD app](https://www.freecodecamp.org/news/crud-operations-explained/) that navigates a user through a feedback submission form, and allows the user to edit their responses before submitting. This app includes an admin page on the feature-stretch-mode branch that allows for submissions to be deleted from the database.
 
 ### Prerequisites
 * [NODE.js](https://nodejs.org/en)
