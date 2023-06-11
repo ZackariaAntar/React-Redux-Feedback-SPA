@@ -20,7 +20,7 @@ router.post('/', async (req, res)=>{
     console.log(postValues.inputStore);
     const postQuery = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
     VALUES ($1, $2, $3, $4);`;
-    pool.query(postQuery, [postValues.feeling, postValues.understanding, postValues.support, postValues.comments])
+    pool.query(postQuery, [postValues.feeling, postValues.understanding, postValues.support, postValues.comment])
     .then((result)=>{
         res.sendStatus(201)
 

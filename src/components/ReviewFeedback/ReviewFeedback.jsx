@@ -1,13 +1,12 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import NextButton from "../NextButton/NextButton";
 import axios from "axios";
 
 function ReviewFeedback() {
 	const inputStore = useSelector((store) => store.inputStore);
-	const postReflection = (event) => {
-		event.preventDefault();
-		axios
-			.post("/feedback", { inputStore })
+    console.log(inputStore.comment);
+	const postReflection = () => {
+		axios.post("/feedback", { inputStore })
 			.then((response) => {
 				console.log(response);
 			})
@@ -23,7 +22,8 @@ function ReviewFeedback() {
 			</h1>
 			<div className="review-wrapper">
 				<h2>
-					Feeling: <span className="score"> {inputStore.feeling}</span>
+					Feeling:
+					<span className="score"> {inputStore.feeling}</span>
 				</h2>
 				<h2>
 					Understanding:
@@ -38,9 +38,13 @@ function ReviewFeedback() {
 					<span className="score"> {inputStore.comment}</span>
 				</h2>
 			</div>
-			<button className="next-button" onClick={postReflection}>
-				<Link to={"/thanks"}> Submit</Link>
-			</button>
+			
+            <div onClick={postReflection}>
+                <NextButton
+				    used={true}
+				    path={"/thanks"}
+			    />
+            </div>
 		</>
 	);
 }
