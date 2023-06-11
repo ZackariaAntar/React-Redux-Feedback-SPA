@@ -4,6 +4,7 @@ import './App.css';
 import Header from '../Header/Header';
 import FeedbackForm from '../FeedbackForm/FeedbackForm';
 import ThanksPage from '../ThanksPage/ThanksPage';
+import Admin from '../Admin/Admin';
 import { useEffect } from 'react';
 import { useDispatch } from "react-redux";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
@@ -33,6 +34,9 @@ function App() {
           <FeedbackForm />
           <Route exact path={'/thanks'}>
             <ThanksPage />
+          </Route>
+          <Route exact path={'/admin'}>
+            <Admin getReflections={getReflections}/>
           </Route>
         </div>
       </div>

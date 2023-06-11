@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 		});
 });
 
-router.post('/', async (req, res)=>{
+router.post('/', (req, res)=>{
     console.log('POST /feedback');
     const postValues = req.body.inputStore
     console.log(postValues.inputStore);
@@ -29,5 +29,22 @@ router.post('/', async (req, res)=>{
         res.sendStatus(500)
     })
 });
+
+router.delete('/delete/:id', (req, res) =>{
+    console.log(`DELETE /feedback/${req.params.id}`);
+    const deleteValue = req.params.id;
+    console.log(req.params.id);
+    const deleteQuery = 'DELETE FROM feedback WHERE id=$1;'
+    pool.query(deleteQuery,[deleteValue])
+    .then((result)=>{
+        console.log(result);
+        res.sendStatus(200)
+
+    }).catch((error)=>{
+        console.log(error);
+        res.sendStatus(500)
+
+    })
+})
 
 module.exports = router;
