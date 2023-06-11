@@ -4,6 +4,7 @@ import UnderstandingField from "../UnderstandingField/UnderstandingField";
 import SupportField from "../SupportField/SupportField";
 import CommentsField from "../CommentsField/CommentsField";
 import ReviewFeedback from "../ReviewFeedback/ReviewFeedback";
+import NextButton from "../NextButton/NextButton";
 
 function FeedbackForm() {
 	return (
@@ -11,32 +12,33 @@ function FeedbackForm() {
 			<form>
 				<Route exact path="/">
 					<div className="FormField-container">
-					    <FeelingField />
-                    </div>
+						<FeelingField />
+
+					</div>
 				</Route>
 
 				<Route exact path="/understanding">
 					<div className="FormField-container">
-					    <UnderstandingField />
-                    </div>
+						<UnderstandingField />
+					</div>
 				</Route>
 
 				<Route exact path="/support">
 					<div className="FormField-container">
-					    <SupportField />
-                    </div>
+						<SupportField />
+					</div>
 				</Route>
 
 				<Route exact path="/comments">
 					<div className="FormField-container">
-					    <CommentsField />
-                    </div>
+						<CommentsField />
+					</div>
 				</Route>
 
 				<Route exact path="/review">
 					<div className="FormField-container">
-					    <ReviewFeedback />
-                    </div>
+						<ReviewFeedback />
+					</div>
 				</Route>
 			</form>
 		</>

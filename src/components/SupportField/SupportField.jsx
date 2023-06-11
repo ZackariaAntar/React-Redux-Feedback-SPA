@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-
+import NextButton from "../NextButton/NextButton";
 
 function SupportField() {
     const [support, setSupport] = useState('')
@@ -19,29 +18,29 @@ function SupportField() {
 			<h1 className="section-header">
 				How well are you being supported?
 			</h1>
-            <div className="input-wrapper">
+			<div className="input-wrapper">
+				<label className="InputLabel">
+					<p>Support?</p>
+					<input
+						className="num-input"
+						value={support}
+						type="number"
+						placeholder="1-5"
+						onChange={(e) => setSupport(e.target.value)}
+						min="0"
+						max="5"
+					/>
+				</label>
+			</div>
 
-			<label className="InputLabel">
-                <p>
-
-                Support?
-                </p>
-			<input
-				className="num-input"
-				value={support}
-				type="number"
-				placeholder="1-5"
-				onChange={(e) => setSupport(e.target.value)}
-                />
-            </label>
-            </div>
-			<button
-				className="next-button"
-				disabled={!support}
-				onClick={handleClick}
-			>
-				{support ? <Link to={"/comments"}>NEXT</Link> : "NEXT"}
-			</button>
+			<NextButton
+				onClick={dispatch({
+					type: "ADD_REFLECTION",
+					payload: { support: support },
+				})}
+				used={support}
+				path={"/comments"}
+			/>
 		</>
 	);
 }

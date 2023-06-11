@@ -24,7 +24,6 @@
 h4 {
   font-style: italic;
 }
-
 .Feedback-wrapper {
   display: flex;
   justify-content: center;
@@ -52,15 +51,12 @@ h4 {
   z-index: 1;
   background: inherit;
   overflow: hidden;
-  width: 900px;
-  height: 350px;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 5px 5px 7px 2px rgba(3, 47, 118, 0.583), inset 0px 0px 4px 2000px rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(2.5px);
   border-radius: 30px;
   width: 950px;
-  height: 450px;
-  margin-bottom: 50px;
+  height: auto;
 
 
 }
@@ -79,7 +75,20 @@ h4 {
   color: #033076;
   font-size: 1.5rem;
   font-weight: bold;
+  padding-right: 25px;
 
+}
+.NewInputLabel > p {
+  color: #033076;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-right: 25px;
+
+}
+.NewInputLabel {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
 
 .num-input {
@@ -90,12 +99,22 @@ h4 {
   font-weight: 600;
 
 }
+.new-num-input {
+  width: 55px;
+  margin-left: 10px;
+  padding: 10px 2px;
+  border: 1px solid transparent;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.431);
+  text-align: center;
+  font-size: 1.25rem;
+  font-family: 'Helvetica Neue';
+  font-weight: 600;
 
+}
 input:focus-visible {
   border: 2px solid purple;
   border-radius: 2px;
 }
-
 
 .num-input:placeholder-shown {
   font-family: 'Helvetica Neue';
@@ -108,25 +127,27 @@ a {
   color: aliceblue;
 }
 
-a:hover{
+a:hover {
   color: #033076;
 }
 
-.next-button:enabled {
-  width: 8vw;
+.next-button:enabled{
+  width: 180px;
+  color: aliceblue;
   padding: 15px 2px;
   border: 5px solid #033076;
   border-radius: 8px;
-  background-color: #033076;
+  background-color: #033077;
   font-family: 'Helvetica Neue';
   font-weight: 600;
   font-size: 1.25rem;
+  margin-bottom: 25px;
 
 
 }
 
 .next-button:disabled {
-  width: 8vw;
+  width: 180px;
   padding: 15px 2px;
   border: 5px solid #032f7600;
   border-radius: 8px;
@@ -160,6 +181,24 @@ a:hover{
   font-family: 'Helvetica Neue';
   font-weight: 600;
 }
+.new-text-area {
+  resize: none;
+  border: 1px solid transparent;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.431);
+  width: 380px;
+  height: 75px;
+  font-family: 'Helvetica Neue';
+  font-weight: 600;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 25px;
+}
+
+.new-text-area:placeholder {
+  font-family: 'Helvetica Neue';
+  font-weight: 600;
+}
 
 textarea:focus::placeholder {
   color: transparent;
@@ -174,4 +213,16 @@ textarea:focus::placeholder {
   margin-left: 250px;
   padding-bottom: 25px;
   text-align: left;
+}
+.new-review-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 150px;
+  padding-bottom: 25px;
+  text-align: left;
+}
+.new-input-wrapper {
+  margin-bottom: 75px;
+
 }
