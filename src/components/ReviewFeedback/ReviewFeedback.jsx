@@ -49,39 +49,14 @@ function ReviewFeedback() {
                 support:newSupport,
                 comment:newComment}})
             setEditing(!editing)
+            setToggle(!toggle)
         }
 
-    const [openDialog, setOpenDialog] = useState(false)
+    const [toggle, setToggle] = useState(false)
 
 
 	return (
 		<>
-			<Dialog open={openDialog}>
-				<DialogTitle>
-					<Typography variant="inherit">Edit feedback</Typography>
-				</DialogTitle>
-
-				<EditForm />
-				<DialogActions>
-					<Button
-						variant="contained"
-						onClick={() => {
-							setOpenDialog(!openDialog);
-						}}
-					>
-						Cancel
-					</Button>
-					<Button
-						variant="contained"
-						color="error"
-						onClick={() => {
-							setOpenDialog(!openDialog);
-						}}
-					>
-						Yes
-					</Button>
-				</DialogActions>
-			</Dialog>
 			<Fab
 				sx={{ float: "right", marginRight: 5, marginTop: 3.5 }}
 				color={"success"}
@@ -98,66 +73,77 @@ function ReviewFeedback() {
 						Review Feedback Before Submitting
 					</h1>
 					<form onSubmit={handleEdits}>
-						<div className="review-wrapper">
-							<h2>
-								Feeling:
+						<div className="new-review-wrapper">
+							<label className="NewInputLabel">
+								<p>Feeling:</p>
+
 								<input
 									className="new-num-input"
 									type="number"
 									value={newFeeling}
-									required={true}
 									placeholder={inputStore.feeling}
 									onChange={(e) =>
 										setNewFeeling(e.target.value)
 									}
+									required
+									min="0"
+									max="5"
 								/>
-							</h2>
-							<h2>
-								Understanding:
+							</label>
+
+							<label className="NewInputLabel">
+								<p>Understanding:</p>
+
 								<input
 									className="new-num-input"
 									type="number"
 									value={newUnderstanding}
-									required={true}
 									placeholder={inputStore.understanding}
 									onChange={(e) =>
 										setNewUnderstanding(e.target.value)
 									}
+									required
+									min="0"
+									max="5"
 								/>
-							</h2>
-							<h2>
-								Supported:
+							</label>
+
+							<label className="NewInputLabel">
+								<p>Supported:</p>
+
 								<input
 									className="new-num-input"
 									type="number"
 									value={newSupport}
-									required={true}
 									placeholder={inputStore.support}
 									onChange={(e) =>
 										setNewSupport(e.target.value)
 									}
+									required= 'true'
+									min="0"
+									max="5"
 								/>
-							</h2>
-							<h2>
-								Comments:
+							</label>
+
+							<label className="NewInputLabel">
+								<p>Comments:</p>
+
 								<textarea
-									className="new-num-input"
+									className="new-text-area"
 									value={newComment}
-									required={true}
 									placeholder={inputStore.comment}
 									onChange={(e) =>
 										setNewComment(e.target.value)
 									}
 								/>
-								<button
-									className="next-button"
-									type="submit"
-									onClick={handleEdits}
-								>
-									{" "}
-									SAVE
-								</button>
-							</h2>
+							</label>
+							<button
+								className="next-button"
+								type="submit"
+								onClick={handleEdits}
+							>
+								SAVE
+							</button>
 						</div>
 					</form>
 				</>
@@ -186,12 +172,54 @@ function ReviewFeedback() {
 							Comments:
 							<span className="score"> {inputStore.comment}</span>
 						</h2>
+						<div>
+							<Button
+								sx={[
+									{
+										width: "180px",
+										padding: "15px 2px",
+										bgcolor: "#033077",
+										fontFamily: "Helvetica Neue",
+										fontWeight: "600",
+										fontSize: "1.25rem",
+										borderRadius: "8px",
+										border: "5px solid transparent",
+									},
+									{
+										"&:hover": {
+											boxShadow: "5px 5px 1px #6e6e6e",
+											cursor: "pointer",
+											bgcolor: "transparent",
+											color: "#033076",
+											border: "5px solid #033076",
+										},
+									},
+									{
+										"&:disabled": {
+											width: "180px",
+											padding: "15px 2px",
+											borderRadius: "8px",
+											color: "aliceblue",
+											bgcolor: "#032f765f",
+											cursor: "no-drop",
+											fontFamily: "Helvetica Neue",
+											fontWeight: "600",
+											fontSize: "1.25rem",
+										},
+									},
+								]}
+								onClick={postReflection}
+								disabled={editing}
+								variant="contained"
+								component={Link}
+								to={"/thanks"}
+							>
+								SUBMIT
+							</Button>
+						</div>
 					</div>
 				</>
 			)}
-			<div onClick={postReflection}>
-				<NextButton used={true} path={"/thanks"} />
-			</div>
 		</>
 	);
 
@@ -285,3 +313,30 @@ export default ReviewFeedback;
 	// 				<span className="score"> {inputStore.comment}</span>
 	// 			</h2>
 	// 		</div>
+
+    // <Dialog open={openDialog}>
+	// 	<DialogTitle>
+	// 		<Typography variant="inherit">Edit feedback</Typography>
+	// 	</DialogTitle>
+
+	// 	<EditForm />
+	// 	<DialogActions>
+	// 		<Button
+	// 			variant="contained"
+	// 			onClick={() => {
+	// 				setOpenDialog(!openDialog);
+	// 			}}
+	// 		>
+	// 			Cancel
+	// 		</Button>
+	// 		<Button
+	// 			variant="contained"
+	// 			color="error"
+	// 			onClick={() => {
+	// 				setOpenDialog(!openDialog);
+	// 			}}
+	// 		>
+	// 			Yes
+	// 		</Button>
+	// 	</DialogActions>
+	// </Dialog>;

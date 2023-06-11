@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { memo } from "react";
 
-function NextButton({ path, used, sendDispatch }) {
+function NextButton({ path, used,  }) {
 	return (
 		<Button
 			sx={[
@@ -16,6 +16,7 @@ function NextButton({ path, used, sendDispatch }) {
 					fontSize: "1.25rem",
 					borderRadius: "8px",
 					border: "5px solid transparent",
+					marginBottom: "25px",
 				},
 				{
 					"&:hover": {
@@ -37,10 +38,10 @@ function NextButton({ path, used, sendDispatch }) {
 						fontFamily: "Helvetica Neue",
 						fontWeight: "600",
 						fontSize: "1.25rem",
+						marginBottom: "25px",
 					},
 				},
 			]}
-			onClick={sendDispatch}
 			disabled={!used}
 			variant="contained"
 			component={Link}

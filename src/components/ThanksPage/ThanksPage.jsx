@@ -5,7 +5,7 @@ function ThanksPage() {
 		<>
 			<div className="FormField-container">
 				<h1>Thanks for your feedback!</h1>
-				<NextButton type={'button'} used = {true} path={"/"} />
+				<NextButton  used = {true} path={"/"} />
 			</div>
 		</>
 	);
