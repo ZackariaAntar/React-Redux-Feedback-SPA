@@ -27,6 +27,8 @@ function SupportField() {
 						type="number"
 						placeholder="1-5"
 						onChange={(e) => setSupport(e.target.value)}
+						min="0"
+						max="5"
 					/>
 				</label>
 			</div>

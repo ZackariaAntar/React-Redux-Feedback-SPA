@@ -24,6 +24,8 @@ function UnderstandingField() {
 						type="number"
 						placeholder="1-5"
 						onChange={(e) => setUnderstanding(e.target.value)}
+						min="0"
+						max="5"
 					/>
 				</label>
 			</div>
